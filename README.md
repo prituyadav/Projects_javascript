@@ -1,1 +1,1 @@
-# Mini-Projects-of-Java-script
+# Projects-of-Java-script
