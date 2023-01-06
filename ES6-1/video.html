@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play video</title>
+    <style>
+    #navbar{
+          display:flex;
+          justify-content: space-around;
+          border:1px solid black;
+          padding:4px;
+      }
+        #Player{
+           width:1000px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            /* //border:1px solid black; */
+            /* justify-content: space-around; */
+        }
+       
+        #main-2{
+            display:flex;
+            margin-top:30px;
+            justify-content: space-around;
+            margin-right: 200px;;
+        }
+        #sidebar-2{
+             width:200px;
+            /* //border:1px solid black; */
+        }
+        #query,#search_bar{
+            padding:5px;
+            padding-left: 10px;;
+        }
+  
+    </style>
+      
+  </head>
+  <body>
+    <div id="navbar">
+        <div>YouTube</div>
+        <div>
+            <input type="text" id="query">
+             <button onclick="search()" id="search_bar">search </button>
+           <div>
+             <img src="https://th.bing.com/th/id/OIP.jdUxbwBc2V7cA5pF13FaFAHaFy?w=256&h=200&c=7&r=0&o=5&dpr=1.25&pid=1.7" width="30" height="30" margin-top="10px"></img>
+            </div>
+       </div>
+    </div>
+
+    <div id="main-2">
+        <div id="sidebar-2">
+            <p><a href="index.html">Home</a></p>
+            <p>Explore</p>
+            <p>History</p>
+            <p>settings</p>
+            <p>Watch later</p>
+            <p>liked vidoes</p>
+            <p>Shorts</p>
+            <p>Subscriptions</p>
+            <p>Music</p>
+            <p>Movies</p>
+            <p>Live News</p>
+            <p>Sports</p>
+            <p>learning</p>
+            <p>Channel</p>
+            <p>Download</p>
+            <p>Content</p>
+            <p>help</p>
+        </div>
+      <div id="Player"></div>
+    </div>
+      
+      
+  </body>
+  </html>
+  <script>
+
+    let vid=JSON.parse(localStorage.getItem("Video"))
+
+    console.log(vid)
+    console.log("ab")
+
+  let videoId=vid.videoId;
+  let title=vid.title
+
+
+    
+    let iframe=document.createElement("iframe");
+     iframe.src=`https://www.youtube.com/embed/${videoId}`;
+       iframe.allow="fullscreen";
+       iframe.height= "550";
+       iframe.width= "1000";
+      
+       
+      let h3=document.createElement("h3");
+      h3.innerText=title;
+
+      let box=document.createElement("div")
+
+      box.append(iframe,h3)
+
+      document.querySelector("#Player").append(box)
+
+
+
+  </script>

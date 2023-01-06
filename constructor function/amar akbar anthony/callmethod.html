@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amar-akbar -anthany </title>
+</head>
+<body>
+    <h1>Amar -Akbar -Anthony page</h1>
+    <p>Amar is a singer- Goa</p>
+    <p>Akbar is a chef- Mumbai</p>
+    <p>Anthony is magician- Kashmir</p>
+    <div></div>
+</body>
+</html>
+<script>
+
+   
+    let Amar={
+        name:"Amar",
+        me:"singer",
+         skill:"singing",
+         borrow:function(learn1,learn2){
+            console.log(`Myself ${this.name}; i am ${this.me} but i want to learn ${learn1} and ${learn2} also, for my friends `)
+         }
+
+    }
+
+    let Akbar ={
+        name:"Akbar",
+        me:"chef",
+
+    }
+
+    let Anthony={
+        name:"Anthony",
+        me:"magician"
+    }
+
+    Amar.borrow("cheffing","magic")
+    Amar.borrow.call(Akbar,"singing","magic")
+    Amar.borrow.call(Anthony,"cheffing","singing")
+   
+   
+   
+    var x= Amar.borrow("cheffing","magic")
+
+    document.querySelector("body").append(x)
+
+ </script>

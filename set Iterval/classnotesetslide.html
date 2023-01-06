@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideset</title>
+</head>
+<body>
+   <input type="url" id="url">
+   <button onclick="storeImages()">Store image</button>
+   <button onclick="gotoSlideshow()">Watch Slideshow</button>
+
+  
+
+</body>
+</html>
+<script>
+    // slideshow
+
+    function gotoSlideshow(){
+ 
+       window.location.href="classnoteslideshow.html"
+        
+
+    }
+
+
+  //------->>>>> setItem local storage
+    function storeImages(){
+
+        //step 1:accept user input
+        let image_url=document.getElementById("url").value;
+
+        let images= JSON.parse(localStorage.getItem("images")) || [];
+
+        images.push(image_url);
+
+        localStorage.setItem("images", JSON.stringify(images))
+
+         document.getElementById("url").value=null;
+
+         
+
+    }
+</script>

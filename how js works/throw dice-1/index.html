@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>throw-dice</title>
+    <style>
+        div{
+            border:1px solid black;
+            width: 100px;
+            margin-left:200px;
+            font-size: 20px;
+        }
+       
+    #roll{
+        margin-left:160px;
+        margin-top:23px;
+        padding:20px 50px 20px 50px;
+        font-size: medium;
+    }
+    #winner,#member-1,#member-2,#member-3{
+       text-align: center;
+    }
+    h1{
+        margin-left:180px;
+    }
+    button{
+        margin-left: 100px;
+        padding: 10px;
+    }
+
+    </style>
+</head>
+<body>
+   
+    
+    <div id="a"><P id="winner">final</P></div>
+    <h1>Winner</h1>
+    <hr>
+    <div id="b"><p  id="member-1">A</p></div>
+    <h1>first member</h1>
+    <div id="c"><p id="member-2">B</p></div>
+    <h1>second member</h1>
+    <div id="d"><p id="member-3">C</p></div>
+    <h1>third member</h1>
+    <hr>
+    <button id="roll">ROLL THE DICE</button>
+    <button id="replay">REPLAY</button>
+</body>
+</html>
+<script>
+    let a=document.getElementById("member-1")
+    let b=document.getElementById("member-2")
+    let c=document.getElementById("member-3")
+
+    let w=document.getElementById("winner")
+
+    document.getElementById("roll").addEventListener("click",Rolling)
+    document.getElementById("replay").addEventListener("click",Replay)
+
+    function Replay(){
+        window.location.reload()
+    }
+
+    function Rolling(){
+        var x=Math.floor((Math.random()*6)+1)
+        a.innerText=x
+        var y=Math.floor((Math.random()*6)+1) 
+        b.innerText=y
+        var z=Math.floor((Math.random()*6)+1)
+        c.innerText=z
+   
+        var j=document.getElementById("b") 
+        
+        var k=document.getElementById("c") 
+
+        var l=document.getElementById("d") 
+
+
+        if(x>y){
+            if(x>z){
+                w.innerText=x +"--->hey! hip hip hurray,,"; w.style.backgroundColor="pink";
+                j.style.backgroundColor="green" 
+                if(y<z){
+                    l.style.backgroundColor="yellow"
+                    k.style.backgroundColor="red"
+                     
+                }
+                else if(z<y){
+                    k.style.backgroundColor="yellow"
+                    l.style.backgroundColor="red"  
+                }
+                else if(z==y){
+                    k.style.backgroundColor="blue" 
+                   l.style.backgroundColor="blue" 
+                    
+                }
+                
+            }
+            else if(z>x){
+                w.innerText=z +"--->hey! hip hip hurray,,"; w.style.backgroundColor="pink";
+                j.style.backgroundColor="yellow" 
+                k.style.backgroundColor="red" 
+                l.style.backgroundColor="green"  
+            }
+        }
+        else if(x==y){
+           
+            j.style.backgroundColor="blue"
+            k.style.backgroundColor="blue"
+            if(y==z){
+                w.innerText="replay"; w.style.backgroundColor="brown";
+                k.style.backgroundColor="blue"
+                 l.style.backgroundColor="blue"
+            }
+            else if(y>z){
+                w.innerText=x +"--->hey! hip hip hurray,,"; w.style.backgroundColor="pink";
+                l.style.backgroundColor="yellow"
+            }
+            else if(z>x){
+                w.innerText=z +"--->hey! hip hip hurray,,"; w.style.backgroundColor="pink";
+                j.style.backgroundColor="blue"
+                k.style.backgroundColor="blue"
+                l.style.backgroundColor="green" 
+            }
+        }
+
+        else if(x<Y){
+              if(x<z){
+                  if(y>z){
+                    w.innerText=y +"--->hey! hip hip hurray,,"; w.style.backgroundColor="pink";
+                     j.style.backgroundColor="red"
+                     k.style.backgroundColor="green"
+                     l.style.backgroundColor="yellow" 
+                  }
+                  else if(z>y){
+                    w.innerText=z +"--->hey! hip hip hurray,,"; w.style.backgroundColor="pink";
+                     j.style.backgroundColor="red"
+                     k.style.backgroundColor="yellow"
+                      l.style.backgroundColor="green" 
+                  }
+                
+                  else if(y==z){
+                    w.innerText=z +"--->hey! hip hip hurray,,"; w.style.backgroundColor="pink";
+                     j.style.backgroundColor="red"
+                     k.style.backgroundColor="blue"
+                     l.style.backgroundColor="blu" 
+                  }
+              }  
+              else if(x==z){
+                    w.innerText=y +"--->hey! hip hip hurray,,"; w.style.backgroundColor="pink";
+                    j.style.backgroundColor="blue"
+                    k.style.backgroundColor="green"
+                    l.style.backgroundColor="blue" 
+                  }
+        }
+        
+
+//     if(x>y && x>z){
+//         w.innerText=x
+//         j.style.backgroundColor="green"
+//     }
+//    if(y>z && y>x){
+//         w.innerText=y
+//         k.style.backgroundColor="green"
+//     }
+//     if(x==z && y==x && y==z){
+//         w.innerText=y
+//         j.style.backgroundColor="blue"
+//         k.style.backgroundColor="blue"
+//         l.style.backgroundColor="blue"
+//     }
+//     if(x==z  && x>y){
+//         w.innerText=x
+//         j.style.backgroundColor="blue"
+//         l.style.backgroundColor="blue" 
+//     }
+//    if(y==x && y>z){
+//         w.innerText=y
+//         j.style.backgroundColor="blue"
+//         k.style.backgroundColor="blue"
+
+//     }
+//     if(y==z && y>x){
+//         w.innerText=y
+//         k.style.backgroundColor="blue"
+//         l.style.backgroundColor="blue" 
+//     }
+//     if(z>y && z>x){
+//         w.innerText=z
+//         l.style.backgroundColor="green"
+//     }
+    // if(z<y && z<x){
+    //     w.innerText=z
+    //     l.style.backgroundColor="red"
+    // }
+    // if(y<z && y<x){
+    //     w.innerText=z
+    //     l.style.backgroundColor="red"
+    // }
+    // if(x<y && x<z){
+    //     w.innerText=z
+    //     l.style.backgroundColor="red"
+    // }
+   
+
+  
+}
+
+
+</script>

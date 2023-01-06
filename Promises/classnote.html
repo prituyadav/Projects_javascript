@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+    https://media3.giphy.com/media/l3nWhI38IWDofyDrW/200w.webp?cid=ecf05e47etysuk5nww12m2yoq9xvfa8e5qcaqkfjjqnyuh7p&rid=200w.webp&ct=g
+
+
+    https://media0.giphy.com/media/Q81NcsY6YxK7jxnr4v/200w.webp?cid=ecf05e47du9rfrb5n1wqylpwka83yq4zksqob66dao6h9zsx&rid=200w.webp&ct=g -->
+
+    <img src=" https://media3.giphy.com/media/l3nWhI38IWDofyDrW/200w.webp?cid=ecf05e47etysuk5nww12m2yoq9xvfa8e5qcaqkfjjqnyuh7p&rid=200w.webp&ct=g" alt="">
+</body>
+</html>
+<script>
+    function checkcontent(){
+        return true;
+    }
+    
+    let content_promise=new Promise(function(resolve,reject){
+         //if content is loaded, resolve
+         // if content is not loaded, reject 
+
+          let content=checkcontent()
+
+        if(content){
+           resolve("Content loaded")
+        }
+        else{
+           reject("Content failed")
+        }
+
+    })
+
+    console.log(content_promise)
+
+    content_promise.then(function(res){
+        console.log(res)
+    });
+
+    content_promise.catch(function(err){
+        console.log(err)
+    })
+
+</script>
+
+

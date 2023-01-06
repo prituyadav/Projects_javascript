@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My own YouTube </title>
+
+  <style>
+      #navbar{
+          display:flex;
+          justify-content: space-around;
+          border:1px solid black;
+          padding:4px;
+      }
+      #container{
+          display:grid;
+          grid-template-columns: repeat(4,1fr);
+          grid-template-rows: auto;
+          /* //border:1px solid black; */
+          gap: 42px;
+      }
+      #container>div{
+          cursor:pointer;
+          text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+      }
+      #main{
+          display:flex;
+          margin-top:30px;
+          justify-content: space-between;
+      }
+      #sidebar{
+           width:600px;
+          /* //border:1px solid black; */
+      }
+      #query,#search_bar{
+            padding:5px;
+            padding-left: 10px;;
+        }
+        #icon{
+            border:1px solid black;
+            width: 50px; 
+        }
+        #For_search{
+            display: flex;
+        }
+
+
+  </style>
+    
+</head>
+<body>
+
+<div id="navbar">
+    <div>YouTube</div>
+    <div id="For_search">
+        <div>
+            <input type="text" id="query">
+         <button onclick="search()" id="search_bar">search </button>
+        </div>
+        
+         <div id="icon">
+            <ion-icon name="search-outline"></ion-icon>
+           <i class="fa-thin fa-magnifying-glass"></i>
+        </div> 
+   </div>
+
+  </div>
+
+  <div id="main">
+      <div id="sidebar">
+          <p><a href="index.html">Home</a></p>
+          <p>Explore</p>
+          <p>History</p>
+          <p>settings</p>
+          <p>Watch later</p>
+          <p>liked vidoes</p>
+          <p>Shorts</p>
+          <p>Subscriptions</p>
+          <p>Music</p>
+          <p>Movies</p>
+          <p>Live News</p>
+          <p>Sports</p>
+          <p>learning</p>
+          <p>Channel</p>
+          <p>Download</p>
+          <p>Content</p>
+          <p>help</p>
+      </div>
+    <div id="container"></div>
+  </div>
+    
+    
+</body>
+</html>
+<script src="index.js"></script>
